@@ -23,10 +23,10 @@
       <div class="container header-inner">
         <nav aria-label="Primary">
           <ul class="nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#basics">DCF Basics</a></li>
-            <li><a href="#steps">Step-by-Step DCF</a></li>
-            <li><a href="#sensitivity">Sensitivity Explorer</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dcf-basics.html">DCF Basics</a></li>
+            <li><a href="step-by-step-dcf.html">Step-by-Step DCF</a></li>
+            <li><a href="step-by-step-dcf.html#sensitivity">Sensitivity Explorer</a></li>
             <li><a href="#resources">Resources &amp; Data</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -37,11 +37,19 @@
     <main id="main" class="container main-grid">
       <div class="content-col">
         <section class="hero card" aria-labelledby="hero-title">
-          <div class="hero-media" aria-hidden="true">✕</div>
           <div class="hero-content">
-            <h2 id="hero-title">Hero graphic / DCF flow diagram</h2>
+            <h2 id="hero-title">See the DCF flow at a glance</h2>
+            <p class="tagline">
+              Follow the path from projected cash flows to intrinsic value using a clear visual overview and simple 5‑step walkthrough.
+            </p>
+            <div class="hero-media">
+              <img
+                src="assets/Discounted-Cash-Flow-Analysis-Explanation-Valutico-2.jpg"
+                alt="Discounted cash flow analysis explanation diagram"
+              />
+            </div>
             <div class="cta-row">
-              <a class="cta" href="#steps">Start the 5‑Step Example</a>
+              <a class="cta" href="step-by-step-dcf.html">Start the 5‑Step Example</a>
               <a class="cta secondary" href="#checklist">Download the Checklist</a>
             </div>
           </div>
@@ -49,24 +57,33 @@
 
         <section id="steps" aria-labelledby="steps-title" class="section card">
           <h3 id="steps-title">Step‑by‑Step Worked Example</h3>
+          <p>
+            Here is the exact five‑step flow used in our sample valuation, so you can see the logic before opening the full walkthrough.
+          </p>
           <div class="card-grid">
-            <article class="mini-card">
-              <h4>Step 1‑2</h4>
-              <div class="mini-art" aria-hidden="true">✕</div>
-              <p>Forecast Cash Flows</p>
-            </article>
-            <article class="mini-card">
-              <h4>Step 3</h4>
-              <div class="mini-art" aria-hidden="true">✕</div>
-              <p>Pick Discount Rate</p>
-            </article>
-            <article class="mini-card">
-              <h4>Step 4‑5</h4>
-              <div class="mini-art" aria-hidden="true">✕</div>
-              <p>PV &amp; Terminal Value</p>
-            </article>
+            <a class="mini-card" href="step-by-step-dcf.html#step-1-title">
+              <h4>Steps 1–2 · Forecast Cash Flows</h4>
+              <p>
+                Start from last year’s free cash flow (in our example, $50&nbsp;million) and apply a 5% growth rate to project Years 1–5
+                (ending around $63.8&nbsp;million).
+              </p>
+            </a>
+            <a class="mini-card" href="step-by-step-dcf.html#step-2-title">
+              <h4>Step 3 · Discount Rate &amp; Terminal Value</h4>
+              <p>
+                Choose a required return (we use 10%) and a long‑term growth rate (3%), then estimate a terminal value based on the
+                Year 6 cash flow and the formula TV = CF<sub>6</sub> / (r − g).
+              </p>
+            </a>
+            <a class="mini-card" href="step-by-step-dcf.html#step-4-title">
+              <h4>Steps 4–5 · Present Value &amp; Sensitivity</h4>
+              <p>
+                Discount each yearly cash flow and the terminal value back to today, add them up to get an intrinsic value estimate, and
+                then see how it changes as you vary growth and discount rates.
+              </p>
+            </a>
           </div>
-          <p class="see-more"><a href="#steps-detail">See the full walkthrough →</a></p>
+          <p class="see-more"><a href="step-by-step-dcf.html">See the full walkthrough →</a></p>
         </section>
 
         <section id="sensitivity" aria-labelledby="sensitivity-title" class="section card">
@@ -103,7 +120,7 @@
               </tbody>
             </table>
           </div>
-          <p class="see-more"><a href="#">Try the Sensitivity Explorer →</a></p>
+          <p class="see-more"><a href="step-by-step-dcf.html#sensitivity">Try the Sensitivity Explorer →</a></p>
         </section>
 
         <section id="basics" aria-labelledby="basics-title" class="section card">
@@ -173,11 +190,11 @@
     <footer id="contact" class="site-footer">
       <div class="container footer-inner">
         <ul class="footer-nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dcf-basics.html">DCF Basics</a></li>
+          <li><a href="step-by-step-dcf.html">Step-by-Step DCF</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
         <p class="footer-copy">© <span id="year"></span> DCF Made Simple — Educational use only — Not financial advice</p>
       </div>

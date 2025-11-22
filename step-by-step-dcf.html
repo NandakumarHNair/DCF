@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Walk through a simple discounted cash flow example step-by-step, including a sensitivity table."
+    />
+    <meta name="author" content="Nandakumar Hareesh Nair" />
+    <meta
+      name="keywords"
+      content="DCF example, discounted cash flow steps, valuation walkthrough"
+    />
+    <title>DCF Made Simple — Step-by-Step DCF</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="masthead">
+        <div class="container">
+          <h1 class="site-title">DCF Made Simple</h1>
+          <p class="site-tag">
+            Learn to value companies step-by-step, no jargon required
+          </p>
+        </div>
+      </div>
+      <div class="container header-inner">
+        <nav aria-label="Primary">
+          <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dcf-basics.html">DCF Basics</a></li>
+            <li><a href="step-by-step-dcf.html">Step-by-Step DCF</a></li>
+            <li><a href="#sensitivity">Sensitivity Explorer</a></li>
+            <li><a href="index.html#resources">Resources &amp; Data</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="container main-grid">
+      <div class="content-col">
+        <section class="hero card" aria-labelledby="steps-hero-title">
+          <div class="hero-content">
+            <h2 id="steps-hero-title">Step-by-Step DCF Example</h2>
+            <p class="tagline">
+              Follow a simple five-step example to move from forecasts to an
+              estimate of intrinsic value.
+            </p>
+          </div>
+        </section>
+
+        <section class="section card" aria-labelledby="step-1-title">
+          <h3 id="step-1-title">Step 1: Forecast Free Cash Flows</h3>
+          <p>
+            Imagine a company that generated $50 million in free cash flow last
+            year. You research its business and decide it is reasonable to
+            assume cash flows can grow 5% per year for the next five years.
+          </p>
+          <p>
+            You build a simple forecast table in a spreadsheet that projects
+            cash flow for Year 1 through Year 5 by applying this growth rate
+            each year.
+          </p>
+          <div class="preview">
+            <table
+              class="preview-table"
+              aria-label="Example forecast of free cash flows"
+            >
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Growth assumption</th>
+                  <th>Free cash flow (USD, millions)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Base year (just reported)</th>
+                  <td>&mdash;</td>
+                  <td>$50.0</td>
+                </tr>
+                <tr>
+                  <th scope="row">Year 1</th>
+                  <td>+5%</td>
+                  <td>$52.5</td>
+                </tr>
+                <tr>
+                  <th scope="row">Year 2</th>
+                  <td>+5%</td>
+                  <td>$55.1</td>
+                </tr>
+                <tr>
+                  <th scope="row">Year 3</th>
+                  <td>+5%</td>
+                  <td>$57.9</td>
+                </tr>
+                <tr>
+                  <th scope="row">Year 4</th>
+                  <td>+5%</td>
+                  <td>$60.8</td>
+                </tr>
+                <tr>
+                  <th scope="row">Year 5</th>
+                  <td>+5%</td>
+                  <td>$63.8</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">
+            These figures are rounded to one decimal place to keep the example
+            simple. In a real model you would likely keep more precision.
+          </p>
+        </section>
+
+        <section class="section card" aria-labelledby="step-2-title">
+          <h3 id="step-2-title">Step 2: Choose a Discount Rate</h3>
+          <p>
+            Next, you need a discount rate that reflects the risk of the cash
+            flows and your required return. For a stable, profitable company,
+            you might use 8–10%. For a riskier, early-stage business, you might
+            use 12% or more.
+          </p>
+          <p>
+            In this example we will use 10% as our base discount rate and later
+            test how the valuation changes at 8% and 12%.
+          </p>
+        </section>
+
+        <section class="section card" aria-labelledby="step-3-title">
+          <h3 id="step-3-title">Step 3: Estimate a Terminal Value</h3>
+          <p>
+            After Year 5, you assume the company&apos;s cash flows grow at a
+            modest long-term rate (for example 2–3%) rather than the higher
+            short-term growth used in the explicit forecast period.
+          </p>
+          <p>
+            You can estimate the terminal value using a formula that divides
+            the Year 6 cash flow by the difference between the discount rate
+            and the long-term growth rate. That terminal value is then treated
+            as a large cash flow in Year 5.
+          </p>
+          <p>
+            In our example, if you assume a 3% long-term growth rate after Year
+            5, Year 6 cash flow would be approximately $65.7 million
+            ($63.8&nbsp;million &times; 1.03). The terminal value formula would
+            be:
+          </p>
+          <p>
+            <strong>Terminal Value</strong> = Year 6 cash flow &divide; (discount rate &minus; long-term growth)  
+            = $65.7&nbsp;million &divide; (10% &minus; 3%).
+          </p>
+        </section>
+
+        <section class="section card" aria-labelledby="step-4-title">
+          <h3 id="step-4-title">Step 4: Discount Everything Back to Today</h3>
+          <p>
+            Now you discount each of the five yearly cash flows and the
+            terminal value back to today using the 10% discount rate. This
+            converts future dollars into present values that are directly
+            comparable.
+          </p>
+          <p>
+            The sum of all discounted cash flows represents your estimate of
+            the value of the operating business. You can then adjust for cash,
+            debt, and the number of shares to arrive at an intrinsic value per
+            share.
+          </p>
+          <div class="preview">
+            <table
+              class="preview-table"
+              aria-label="Present value of forecast cash flows and terminal value"
+            >
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Cash flow (USD, millions)</th>
+                  <th>Present value formula at 10%</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Year 1</th>
+                  <td>$52.5</td>
+                  <td>52.5 &divide; (1.10)<sup>1</sup></td>
+                </tr>
+                <tr>
+                  <th scope="row">Year 2</th>
+                  <td>$55.1</td>
+                  <td>55.1 &divide; (1.10)<sup>2</sup></td>
+                </tr>
+                <tr>
+                  <th scope="row">Year 3</th>
+                  <td>$57.9</td>
+                  <td>57.9 &divide; (1.10)<sup>3</sup></td>
+                </tr>
+                <tr>
+                  <th scope="row">Year 4</th>
+                  <td>$60.8</td>
+                  <td>60.8 &divide; (1.10)<sup>4</sup></td>
+                </tr>
+                <tr>
+                  <th scope="row">Year 5</th>
+                  <td>$63.8</td>
+                  <td>63.8 &divide; (1.10)<sup>5</sup></td>
+                </tr>
+                <tr>
+                  <th scope="row">Terminal value</th>
+                  <td>TV from Step 3</td>
+                  <td>TV &divide; (1.10)<sup>5</sup></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">
+            When you actually run these numbers in a spreadsheet and add up all
+            of the present values, you arrive at an overall estimate of what
+            the business is worth today based on your assumptions.
+          </p>
+        </section>
+
+        <section
+          id="sensitivity"
+          class="section card"
+          aria-labelledby="sensitivity-title"
+        >
+          <h3 id="sensitivity-title">Step 5: Run a Simple Sensitivity Check</h3>
+          <p>
+            Because nobody can predict the future perfectly, it is helpful to
+            see how your valuation changes if growth or the discount rate are a
+            little higher or lower than your base case.
+          </p>
+          <div class="preview">
+            <table
+              class="preview-table"
+              aria-label="Sensitivity of intrinsic value to growth and discount rate assumptions"
+            >
+              <thead>
+                <tr>
+                  <th>Discount ↓ / Growth →</th>
+                  <th>3% growth</th>
+                  <th>5% growth</th>
+                  <th>7% growth</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">8% discount rate</th>
+                  <td>$90 per share</td>
+                  <td>$98 per share</td>
+                  <td>$107 per share</td>
+                </tr>
+                <tr>
+                  <th scope="row">10% discount rate</th>
+                  <td>$78 per share</td>
+                  <td>$85 per share</td>
+                  <td>$93 per share</td>
+                </tr>
+                <tr>
+                  <th scope="row">12% discount rate</th>
+                  <td>$69 per share</td>
+                  <td>$75 per share</td>
+                  <td>$82 per share</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">
+            These numbers are illustrative, but they show how a higher discount
+            rate or lower growth assumption can quickly lower your estimate of
+            intrinsic value.
+          </p>
+        </section>
+      </div>
+
+      <aside class="sidebar-col" aria-label="Right Sidebar">
+        <section class="side card">
+          <h3>5-Step Checklist</h3>
+          <ul class="learn-list">
+            <li>Understand the business model first.</li>
+            <li>Forecast free cash flow for 3–5 years.</li>
+            <li>Pick a reasonable discount rate range.</li>
+            <li>Estimate a conservative terminal value.</li>
+            <li>Test optimistic and pessimistic scenarios.</li>
+          </ul>
+        </section>
+        <section class="side card">
+          <h3>Next Up</h3>
+          <p>
+            After you are comfortable with this example, try building your own
+            DCF in a spreadsheet using a company you know well, then compare
+            your intrinsic value estimate to its current market price.
+          </p>
+        </section>
+      </aside>
+    </main>
+
+    <footer id="contact" class="site-footer">
+      <div class="container footer-inner">
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dcf-basics.html">DCF Basics</a></li>
+          <li><a href="step-by-step-dcf.html">Step-by-Step DCF</a></li>
+          <li><a href="#sensitivity">Sensitivity</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p class="footer-copy">
+          © <span id="year"></span> DCF Made Simple — Educational use only —
+          Not financial advice
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
