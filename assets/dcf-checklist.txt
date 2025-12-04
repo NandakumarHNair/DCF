@@ -1,0 +1,9 @@
+DCF Made Simple — Before You Value Checklist
+
+Use this quick checklist before you start a DCF:
+
+- Understand the business model and key revenue drivers.
+- Review recent financials for one-off or unusual items.
+- Choose a cautious base growth rate and test ranges.
+- Pick a discount rate consistent with the risk of the business.
+
